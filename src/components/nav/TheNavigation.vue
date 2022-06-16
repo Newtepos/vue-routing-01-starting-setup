@@ -7,7 +7,7 @@
         </li>
         <li>
           <router-link to="/users">Users</router-link>
-          </li>
+        </li>
       </ul>
     </nav>
   </header>
@@ -48,7 +48,8 @@ a {
 }
 
 a:hover,
-a:active {
+a:active,
+a.active {
   color: #f1a80a;
   border-color: #f1a80a;
   background-color: #1a037e;
