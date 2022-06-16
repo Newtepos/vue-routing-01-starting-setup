@@ -31,15 +31,18 @@ const router = createRouter({
     { path: '/:notFound(.*)', component: NotFound },
   ],
   linkActiveClass: 'active',
-  scrollBehavior(to, from, savePosition) {
-    console.log(to);
-    console.log(from);
-    console.log(savePosition);
+  scrollBehavior(_, _2, savePosition) {
     if (savePosition) {
       return savePosition;
     }
     return { left: 0, top: 0 };
   },
+});
+
+router.beforeEach(function (to, from, next) {
+  console.log('Global beforEach');
+  console.log(to, from);
+  next();
 });
 
 const app = createApp(App);
